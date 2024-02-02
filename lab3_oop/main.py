@@ -36,8 +36,8 @@ class PaperBook(Book):
             raise ValueError("Количество страниц должно быть положительным числом")
         self._pages = value
 
-    def __str__(self):
-        return f"Бумажная {super().__str__()} с {self.pages} страницами."
+    def __repr__(self):
+        return f"{self.__class__.__name__}(name={self.name!r}, author={self.author!r}, pages={self.pages})"
 
 
 class AudioBook(Book):
@@ -57,5 +57,5 @@ class AudioBook(Book):
             raise ValueError("Продолжительность должна быть положительным числом")
         self._duration = value
 
-    def __str__(self):
-        return f"Аудио {super().__str__()} с продолжительностью {self.duration} часов."
+    def __repr__(self):
+        return f"{self.__class__.__name__}(name={self.name!r}, author={self.author!r}, duration={self.duration})"
